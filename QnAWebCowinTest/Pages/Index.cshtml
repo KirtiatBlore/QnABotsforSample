@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div>
+        <style>
+
+            #webchat {
+                height: 90%;
+                width: 70%;
+            }
+        </style>
+        <div id="webchat" class="card bg-dark" ></div>
+        @*<div>
+            <iframe src='https://webchat.botframework.com/embed/cowin_test_bot?s=YOUR_SECRET_HERE' style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
+        </div>*@
+        <script>
+            window.WebChat.renderWebChat(
+                {
+                    directLine: window.WebChat.createDirectLine({
+                        token: 'yT0ikBgWnLc.6ER8s9fNon6fgy3d914tSiClns4_qiMsnVjSbI2-ixE'
+                    }),
+                    userID: 'Cowin_Test_bot',
+                    username: 'You',
+                    locale: 'en-US'
+                },
+                document.getElementById('webchat')
+            );
+        </script>
+
+
+    </div>
+
